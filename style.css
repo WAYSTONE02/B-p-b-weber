@@ -97,6 +97,18 @@ section h2::after {
     transform:translateY(-10px);
     box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
+.activity h3 {
+    font-size: 1.5rem;  
+    margin-bottom: 15px; /* Tạo khoảng cách với đoạn văn bên dưới cho thoáng */
+    color: #2E7D32;      /* Làm đậm màu xanh hơn chút  */
+}
+
+/* Tăng cỡ chữ nội dung mô tả */
+.activity p {
+    font-size: 1.1rem;   
+    line-height: 1.6;    /* Giãn dòng giúp dễ đọc */
+    color: #555;         /* Màu chữ xám đậm dễ nhìn */
+}
 
 /* ========== TESTIMONIALS ========== */
 .testimonials {
@@ -118,6 +130,7 @@ section h2::after {
     height:80px;
     border-radius:50%;
     margin-bottom:15px;
+    object-fit: cover;
 }
 
 /* ========== CONTACT FORM ========== */
@@ -162,3 +175,30 @@ footer a {color:#4CAF50; margin:0 10px; font-size:1.2rem;}
     .activities {grid-template-columns:1fr;}
     .testimonials {flex-direction:column; align-items:center;}
 }
+/* ... Các code CSS khác ... */
+
+/* Đóng media query trước khi viết animation */
+@media(max-width:768px){
+    header h1 {font-size:2.2rem;}
+    header p {font-size:1.1rem;}
+    .activities {grid-template-columns:1fr;}
+    .testimonials {flex-direction:column; align-items:center;}
+} /* <--- Đảm bảo có dấu đóng này */
+
+/* ========== SCROLL ANIMATION ========== */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Hiệu ứng so le */
+.activity:nth-child(2), .testimonial:nth-child(2) { transition-delay: 200ms; }
+.activity:nth-child(3), .testimonial:nth-child(3) { transition-delay: 400ms; }
