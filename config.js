@@ -2,10 +2,26 @@
 const introText = "CLB Tâm An là....";
 
 const activities = [
-    { title: "Thiền Yoga", desc: "Rèn luyện tâm trí và sự dẻo dai ." },
-    { title: "Đi bộ tâm tình", desc: "Hoạt động đi bộ thường xuyên mỗi sáng chủ nhật." },
-    { title: "Workshop ", desc: "Chia sẻ các hoạt động healing như làm nến, sáp thơm và các hoạt động liên quan đến nghệ thuật." },
-    { title: "Hoạt động cộng đồng ", desc: "  ." }
+    { title: "Thiền Yoga", desc: "Rèn luyện tâm trí và sự dẻo dai.",
+        images: [
+          
+        ]
+     },
+    { title: "Đi bộ tâm tình", desc: "Hoạt động đi bộ thường xuyên mỗi sáng chủ nhật.",
+        images: [
+           
+        ]
+     },
+    { title: "Workshop ", desc: "Chia sẻ các hoạt động như làm nến, sáp thơm và các hoạt động liên quan đến nghệ thuật.",
+        images: [
+           
+        ]
+    },
+    { title: "Hoạt động cộng đồng ", desc: " ...." ,
+        images: [
+            
+        ]
+    }
 ];
 
 const testimonials = [

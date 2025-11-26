@@ -8,51 +8,59 @@
 </head>
 <body>
 
-<header>
-    <h1>CLB Tâm An</h1>
-    <p>Tâm an thể khỏe tuổi trẻ hết mình</p>
-    <button id="joinBtn">Tham gia ngay</button>
-</header>
+    <nav id="navbar">
+        <a href="#intro">Giới thiệu</a>
+        <a href="#activities">Hoạt động</a>
+        <a href="#testimonials">Câu chuyện</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
 
-<nav id="navbar">
-    <a href="#intro">Giới thiệu</a>
-    <a href="#activities">Hoạt động</a>
-    <a href="#testimonials">Câu chuyện</a>
-    <a href="#contact">Liên hệ</a>
-</nav>
+    <header>
+        <h1>CLB Tâm An</h1>
+        <p>Tâm an thể khỏe tuổi trẻ hết mình</p>
+        <button id="joinBtn">Tham gia ngay</button>
+    </header>
 
-<section id="intro">
-    <h2>Giới thiệu CLB</h2>
-    <p id="introText"></p>
-</section>
+    <section id="intro">
+        <h2>Giới thiệu CLB</h2>
+        <p id="introText"></p>
+    </section>
 
-<section id="activities">
-    <h2>Hoạt động nổi bật</h2>
-    <div class="activities" id="activitiesContainer"></div>
-</section>
+    <section id="activities">
+        <h2>Hoạt động nổi bật</h2>
+        <div class="activities" id="activitiesContainer"></div>
+    </section>
 
-<section id="testimonials">
-    <h2>Câu chuyện từ thành viên</h2>
-    <div class="testimonials" id="testimonialsContainer"></div>
-</section>
+    <section id="testimonials">
+        <h2>Câu chuyện từ thành viên</h2>
+        <div class="testimonials" id="testimonialsContainer"></div>
+    </section>
 
-<section id="contact" class="contact hidden">
-    <h2>Liên hệ & Tham gia</h2>
-    <form>
-        <input type="text" placeholder="Họ tên" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Nội dung" rows="5" required></textarea>
-        <button type="submit">Gửi</button>
-    </form>
-</section>
+    <section id="contact" class="contact hidden">
+        <h2>Liên hệ & Tham gia</h2>
+        <form>
+            <input type="text" placeholder="Họ tên" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Nội dung" rows="5" required></textarea>
+            <button type="submit">Gửi</button>
+        </form>
+    </section>
 
-<footer>
-    &copy; 2025 CLB Tâm An. Connect: 
-    <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Email</a>
-</footer>
+    <footer>
+        &copy; 2025 CLB Tâm An. Connect: 
+        <a href="#">Facebook</a> | <a href="#">Phone</a> | <a href="#">Email</a>
+    </footer>
 
-<script src="config.js"></script>
-<script src="script.js"></script>
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <div class="modal-gallery" id="modalGallery"></div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
