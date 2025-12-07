@@ -1,26 +1,28 @@
 // config.js - CHỈ CHỨA DỮ LIỆU
 const introText = "CLB Tâm An là....";
 
+
+// Định dạng: Năm-Tháng-Ngày (YYYY-MM-DD)
 const activities = [
-    { title: "Thiền Yoga", desc: "Rèn luyện tâm trí và sự dẻo dai.",
-        images: [
-          
-        ]
-     },
-    { title: "Đi bộ tâm tình", desc: "Hoạt động đi bộ thường xuyên mỗi sáng chủ nhật.",
-        images: [
-           
-        ]
-     },
-    { title: "Workshop ", desc: "Chia sẻ các hoạt động như làm nến, sáp thơm và các hoạt động liên quan đến nghệ thuật.",
-        images: [
-           
-        ]
+    { 
+        title: "Thiền Yoga", 
+        start: "2025-12-15", 
+        desc: "Rèn luyện tâm trí tại công viên."
     },
-    { title: "Hoạt động cộng đồng ", desc: " ...." ,
-        images: [
-            
-        ]
+    { 
+        title: "Đi bộ tâm tình", 
+        start: "2025-12-18", 
+        desc: "Đi bộ trecking hồ đá."
+    },
+    { 
+        title: "Workshop Nến thơm", 
+        start: "2025-12-25", 
+        desc: "Học làm nến nghệ thuật."
+    },
+    { 
+        title: "Thiền Yoga", 
+        start: "2025-12-29", 
+        desc: "Buổi tập nâng cao."
     }
 ];
 

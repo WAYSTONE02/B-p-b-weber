@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLB Tâm An</title>
     <link rel="stylesheet" href="style.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
 </head>
 <body>
 
@@ -27,9 +29,41 @@
     </section>
 
     <section id="activities">
-        <h2>Hoạt động nổi bật</h2>
-        <div class="activities" id="activitiesContainer"></div>
-    </section>
+    <h2>Hoạt động nổi bật</h2>
+    
+    <div class="calendar-wrapper">
+        
+        <div class="calendar-sidebar">
+            <div class="sidebar-header">
+                <h3>Sắp diễn ra</h3>
+                <p>Đừng bỏ lỡ các sự kiện thú vị!</p>
+            </div>
+            
+            <div class="mini-event-list">
+                <div class="mini-event">
+                    <span class="event-date">15/06</span>
+                    <div class="event-info">
+                        <strong>Thiền Yoga</strong>
+                        <span>Công viên trung tâm</span>
+                    </div>
+                </div>
+                <div class="mini-event">
+                    <span class="event-date">18/06</span>
+                    <div class="event-info">
+                        <strong>Đi bộ tâm tình</strong>
+                        <span>Hồ đá</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-note">
+                <p>💡 Click vào ngày trên lịch để đăng ký tham gia ngay.</p>
+            </div>
+        </div>
+
+        <div id="activitiesContainer"></div>
+    </div>
+</section>
 
     <section id="testimonials">
         <h2>Câu chuyện từ thành viên</h2>
@@ -58,7 +92,25 @@
             <div class="modal-gallery" id="modalGallery"></div>
         </div>
     </div>
+    <div id="registerModal" class="modal-overlay">
+    <div class="modal-content contact" style="max-width: 500px;">
+        <span class="close-register-btn">&times;</span>
+        <h3 style="margin-bottom:20px; color:#4CAF50;">Đăng ký tham gia</h3>
 
+        <form id="googleSheetForm">
+            <label>Hoạt động:</label>
+            <input type="text" id="activityName" name="activity" readonly style="background:#eee; font-weight:bold;">
+
+            <label>Thời gian:</label>
+            <input type="text" id="activityDate" name="date" readonly style="background:#eee;">
+
+            <input type="text" id="userName" name="name" placeholder="Họ và tên của bạn" required>
+            <input type="text" id="userPhone" name="phone" placeholder="Số điện thoại / Zalo" required>
+
+            <button type="submit" id="submitBtn">Xác nhận đăng ký</button>
+        </form>
+    </div>
+</div>
     <script src="config.js"></script>
     <script src="script.js"></script>
 

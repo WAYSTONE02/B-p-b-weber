@@ -64,7 +64,6 @@ header button:hover {background:#388E3C;}
     color: #4CAF50; /* Màu xanh lá khi di chuột vào */
 }
 
-s
 header {
     margin-top: 0; 
 }
@@ -194,13 +193,6 @@ footer a {color:#4CAF50; margin:0 10px; font-size:1.2rem;}
     .testimonials {flex-direction:column; align-items:center;}
 }
 
-/* Đóng media query trước khi viết animation */
-@media(max-width:768px){
-    header h1 {font-size:2.2rem;}
-    header p {font-size:1.1rem;}
-    .activities {grid-template-columns:1fr;}
-    .testimonials {flex-direction:column; align-items:center;}
-} 
 
 /* ========== SCROLL ANIMATION ========== */
 .hidden {
@@ -284,4 +276,193 @@ footer a {color:#4CAF50; margin:0 10px; font-size:1.2rem;}
 @keyframes zoomIn {
     from {transform: scale(0.8); opacity: 0;}
     to {transform: scale(1); opacity: 1;}
+}
+    
+/* ========== CSS CHO LỊCH (FULLCALENDAR) ========== */
+#activitiesContainer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Đổi màu nút bấm trên lịch sang màu xanh lá */
+.fc-button-primary {
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+}
+.fc-button-primary:hover {
+    background-color: #388E3C !important;
+}
+/* Màu sự kiện trên lịch */
+.fc-event {
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+}
+/* ========== GIAO DIỆN LỊCH MỚI ========== */
+
+/* 1. Layout chia 2 cột */
+.calendar-wrapper {
+    display: flex;
+    gap: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden; /* Bo tròn góc */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. Cột bên trái (Sidebar) */
+.calendar-sidebar {
+    width: 300px; /* Chiều rộng cố định */
+    background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Màu xanh gradient */
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Không bị co lại */
+}
+
+.sidebar-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.sidebar-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* Sự kiện nhỏ bên trái */
+.mini-event {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+}
+.event-date {
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #fff;
+    color: #2E7D32;
+    padding: 8px;
+    border-radius: 6px;
+    margin-right: 12px;
+    min-width: 55px;
+    text-align: center;
+}
+.event-info strong {
+    display: block;
+    font-size: 1rem;
+}
+.event-info span {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+.sidebar-note {
+    margin-top: auto; /* Đẩy xuống đáy */
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}
+
+/* 3. Cột bên phải (Chứa Lịch) */
+#activitiesContainer {
+    flex-grow: 1; /* Chiếm hết phần còn lại */
+    background: #fff;
+    padding: 20px;
+    box-shadow: none; /* Bỏ shadow cũ vì wrapper đã có */
+}
+
+/* ========== TÙY CHỈNH FULLCALENDAR (Làm đẹp header) ========== */
+
+/* Thanh công cụ (Header của lịch) */
+.fc .fc-toolbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5em !important;
+}
+
+/* Tiêu đề Tháng/Năm */
+.fc .fc-toolbar-title {
+    font-size: 1.5rem !important;
+    color: #2E7D32; /* Màu xanh đậm */
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Các nút bấm (Prev, Next, Today...) */
+.fc .fc-button {
+    background-color: #fff !important;
+    color: #555 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+    padding: 8px 15px !important;
+}
+
+/* Hiệu ứng khi hover nút */
+.fc .fc-button:hover {
+    background-color: #f1f8e9 !important; /* Xanh nhạt */
+    color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+}
+
+/* Nút đang active (nút Tháng/Danh sách) */
+.fc .fc-button-active {
+    background-color: #4CAF50 !important;
+    color: #fff !important;
+    border-color: #4CAF50 !important;
+}
+
+/* Bỏ viền xanh mặc định khi click (focus) */
+.fc .fc-button:focus {
+    box-shadow: none !important;
+}
+
+/* ========== RESPONSIVE (Mobile) ========== */
+@media(max-width: 768px) {
+    .calendar-wrapper {
+        flex-direction: column; /* Xếp chồng lên nhau trên đt */
+    }
+    .calendar-sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+    .fc .fc-toolbar {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Sửa lỗi nút đóng modal đăng ký */
+.close-register-btn {
+    position: absolute; /* Ghim chặt vào khung */
+    top: 15px;          /* Cách mép trên 15px */
+    right: 20px;        /* Cách mép phải 20px */
+    font-size: 2rem;    /* Kích thước chữ to rõ */
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    z-index: 100;       /* Đảm bảo nằm trên cùng */
+    line-height: 1;     /* Giúp căn giữa tốt hơn */
+    transition: color 0.3s;
+}
+
+.close-register-btn:hover {
+    color: #e53935; /* Màu đỏ khi di chuột vào */
+}
+
+.modal-content.contact {
+    position: relative; 
 }
